@@ -1,11 +1,14 @@
 import { CommandLineIcon, ChatBubbleBottomCenterTextIcon, AcademicCapIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Services() {
+  const { t } = useTranslation();
+
   const services = [
     {
       icon: CommandLineIcon,
-      title: "Yazılım Geliştirme",
-      description: "Web, mobil ve masaüstü uygulamaları",
+      title: t("softwareDevelopment"),
+      description: t("softwareDevelopmentDesc"),
       bgColor: "bg-blue-50",
       iconBg: "bg-blue-100",
       iconColor: "text-blue-600",
@@ -13,8 +16,8 @@ export default function Services() {
     },
     {
       icon: ChatBubbleBottomCenterTextIcon,
-      title: "IT Danışmanlık",
-      description: "Dijital dönüşüm rehberliği",
+      title: t("itConsulting"),
+      description: t("itConsultingDesc"),
       bgColor: "bg-green-50",
       iconBg: "bg-green-100",
       iconColor: "text-green-600",
@@ -22,8 +25,8 @@ export default function Services() {
     },
     {
       icon: AcademicCapIcon,
-      title: "Teknik Eğitim",
-      description: "Kurumsal eğitim programları",
+      title: t("technicalTraining"),
+      description: t("technicalTrainingDesc"),
       bgColor: "bg-purple-50",
       iconBg: "bg-purple-100",
       iconColor: "text-purple-600",
@@ -31,8 +34,8 @@ export default function Services() {
     },
     {
       icon: WrenchScrewdriverIcon,
-      title: "Bakım & Destek",
-      description: "7/24 teknik destek hizmeti",
+      title: t("maintenanceSupport"),
+      description: t("maintenanceSupportDesc"),
       bgColor: "bg-orange-50",
       iconBg: "bg-orange-100",
       iconColor: "text-orange-600",
@@ -46,10 +49,10 @@ export default function Services() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">
-            Hizmetlerimiz
+            {t("servicesTitle")}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Dijital dönüşüm yolculuğunuzda size en uygun çözümleri sunuyoruz
+            {t("servicesSubtitle")}
           </p>
         </div>
 

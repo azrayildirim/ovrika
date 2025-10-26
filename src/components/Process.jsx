@@ -1,13 +1,16 @@
 import { FaLightbulb, FaCode, FaRocket, FaCogs, FaCheckCircle, FaHandshake } from "react-icons/fa";
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Process() {
+  const { t } = useTranslation();
+
   const processSteps = [
     {
       step: 1,
-      title: "Keşif & Analiz",
+      title: t("discoveryAnalysis"),
       icon: FaLightbulb,
-      description: "İhtiyaçlarınızı analiz ediyor, proje hedeflerini belirliyoruz",
-      duration: "1-2 Hafta",
+      description: t("discoveryAnalysisDesc"),
+      duration: t("week1_2"),
       bgColor: "bg-blue-50",
       iconBg: "bg-blue-100",
       iconColor: "text-blue-600",
@@ -15,10 +18,10 @@ export default function Process() {
     },
     {
       step: 2,
-      title: "Tasarım & Planlama",
+      title: t("designPlanning"),
       icon: FaCode,
-      description: "Kullanıcı deneyimini ön planda tutarak detaylı tasarım oluşturuyoruz",
-      duration: "2-3 Hafta",
+      description: t("designPlanningDesc"),
+      duration: t("week2_3"),
       bgColor: "bg-green-50",
       iconBg: "bg-green-100",
       iconColor: "text-green-600",
@@ -26,10 +29,10 @@ export default function Process() {
     },
     {
       step: 3,
-      title: "Geliştirme",
+      title: t("development"),
       icon: FaCogs,
-      description: "Agile metodoloji ile düzenli güncellemelerle projenizi geliştiriyoruz",
-      duration: "4-12 Hafta",
+      description: t("developmentDesc"),
+      duration: t("week4_12"),
       bgColor: "bg-purple-50",
       iconBg: "bg-purple-100",
       iconColor: "text-purple-600",
@@ -37,10 +40,10 @@ export default function Process() {
     },
     {
       step: 4,
-      title: "Test & Optimizasyon",
+      title: t("testOptimization"),
       icon: FaCheckCircle,
-      description: "Kapsamlı testler yaparak performansı optimize ediyoruz",
-      duration: "1-2 Hafta",
+      description: t("testOptimizationDesc"),
+      duration: t("week1_2"),
       bgColor: "bg-orange-50",
       iconBg: "bg-orange-100",
       iconColor: "text-orange-600",
@@ -48,10 +51,10 @@ export default function Process() {
     },
     {
       step: 5,
-      title: "Lansman & Destek",
+      title: t("launchSupport"),
       icon: FaRocket,
-      description: "Projenizi canlıya alıyor ve sürekli destek sağlıyoruz",
-      duration: "Sürekli",
+      description: t("launchSupportDesc"),
+      duration: t("continuous"),
       bgColor: "bg-indigo-50",
       iconBg: "bg-indigo-100",
       iconColor: "text-indigo-600",
@@ -59,10 +62,10 @@ export default function Process() {
     },
     {
       step: 6,
-      title: "İşbirliği",
+      title: t("collaboration"),
       icon: FaHandshake,
-      description: "Uzun vadeli işbirliği ile sürekli gelişimi destekliyoruz",
-      duration: "Uzun Vadeli",
+      description: t("collaborationDesc"),
+      duration: t("longTerm"),
       bgColor: "bg-pink-50",
       iconBg: "bg-pink-100",
       iconColor: "text-pink-600",
@@ -75,10 +78,10 @@ export default function Process() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">
-            Çalışma Sürecimiz
+            {t("processTitle")}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Projelerinizi adım adım başarıya taşıyan metodolojimiz
+            {t("processSubtitle")}
           </p>
         </div>
 
@@ -150,16 +153,16 @@ export default function Process() {
         <div className="text-center mt-12">
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-3">
-              Projenizi Birlikte Başlatalım
+              {t("startProject")}
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Ücretsiz danışmanlık alarak projenizi hayata geçirelim
+              {t("startProjectDesc")}
             </p>
             <a
               href="#contact"
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors"
             >
-              Ücretsiz Danışmanlık Al
+              {t("freeConsultation")}
             </a>
           </div>
         </div>

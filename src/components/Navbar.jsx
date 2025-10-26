@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
-const LINKS = [
-  { id: "hero", label: "Ana Sayfa" },
-  { id: "features", label: "Hizmetler" },
-];
+import { useTranslation } from "../hooks/useTranslation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
+
+  const LINKS = [
+    { id: "hero", label: t("home") },
+    { id: "features", label: t("services") },
+  ];
 
   const handleLink = (id) => {
     setOpen(false);
@@ -37,11 +40,12 @@ function Navbar() {
                 {link.label}
               </button>
             ))}
+            <LanguageSwitcher />
             <button 
               onClick={() => handleLink("contact")}
               className="ml-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              İletişim
+              {t("contact")}
             </button>
           </div>
 
@@ -68,12 +72,15 @@ function Navbar() {
                 {link.label}
               </button>
             ))}
-            <button 
-              onClick={() => handleLink("contact")}
-              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
-            >
-              İletişime Geç
-            </button>
+            <div className="flex space-x-2">
+              <LanguageSwitcher />
+              <button 
+                onClick={() => handleLink("contact")}
+                className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
+              >
+                {t("contactButton")}
+              </button>
+            </div>
           </div>
         </div>
       )}
